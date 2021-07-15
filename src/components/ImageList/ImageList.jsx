@@ -9,7 +9,7 @@ export default class ImageList extends Component {
         <h1>ImageList</h1>
         <div className={styles.imageList}>
           {
-            this.props.data.map(creature => <ImageItem key={creature} data={creature} />)
+            this.props.data.map(creature => <ImageItem key={creature.title} data={creature} />)
           }
         </div>
       </div>

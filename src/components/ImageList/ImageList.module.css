@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .imageList {
   display: flex;
   justify-content: space-between;

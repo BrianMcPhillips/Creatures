@@ -6,7 +6,7 @@ export default class ImageItem extends Component {
     return (
       <div className={styles.item}>
         <img src={this.props.data.url} alt={this.props.data.title}/>
-      <h3>{this.props.data.title}</h3>
+        <h3>{this.props.data.title}</h3>
       </div>
     )
   }
