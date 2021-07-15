@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
 import Header from './Header/Header';
+import Filter from './Filter/Filter';
 import ImageList from './ImageList/ImageList';
 import { data, options, numbers } from '../assets/data';
 
@@ -11,11 +12,11 @@ export default class App extends Component {
     filterTwo: 'All'
   };
 
-  handleKeywordChange = (e) => {
+  handleKeyword = (e) => {
     this.setState({ filter: e.target.value })
   }
 
-  handleNumberChange = (e) => {
+  handleNumber = (e) => {
     this.setState({ filterTwo: e.target.value })
   }
 
@@ -25,21 +26,15 @@ export default class App extends Component {
 
     const newFilterImages = filteredImages.filter(creature => 
       this.state.filterTwo === 'All' ? true : creature.horns === Number(this.state.filterTwo));
+      
     return (
       <div className={styles.App}>
         <Header /> 
-        <div>
-          <select onChange={this.handleKeywordChange}>
-            {
-              options.map(keyword => <option key={keyword} value={keyword}>{keyword}</option>)
-            }
-          </select>
-          <select onChange={this.handleNumberChange}>
-            {
-              numbers.map(num => <option key={num} value={num}>{num}</option>)
-            }
-          </select>
-        </div>
+        <Filter 
+          options={options} 
+          numbers={numbers} 
+          handleKeyword={this.handleKeyword}
+          handleNumber={this.handleNumber}/>
         <ImageList data={newFilterImages}/>
       </div>
     )
