@@ -161,4 +161,29 @@ const data = [
   }
 ];
 
-export default data;
+const options = [
+  'All',
+  'Unilego',
+  'Narwhal',
+  'Rhino',
+  'Unicorn',
+  'Markhor',
+  'Mouflon',
+  'Chameleon',
+  'Lizard',
+  'Dragon'
+];
+
+const numbers = [
+  'All',
+  1,
+  2, 
+  3, 
+  100
+]
+
+export {
+  data,
+  options,
+  numbers
+};
